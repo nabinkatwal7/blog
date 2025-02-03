@@ -1,6 +1,5 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
 const pageTitle = "About Me";
 
@@ -41,28 +40,24 @@ const textCase = "uppercase";
         </style>
 	</head>
 	<body>
-		<Header />
-		<h1>{pageTitle}</h1>
-        <p>Few things about me:</p>
-        <ul>
-            <li>My name is {identity.firstName}</li>
-            <li>
-                I live in {identity.country} and I work as a {identity.occupation}.
-            </li>
-            <li>
-                My hobbies include {identity.hobbies[0]}, {identity.hobbies[1]}, {identity.hobbies[2]}, and {identity.hobbies[3]}
-            </li>
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill" >{skill}</li>)}
-        </ul>
-        {happy && <p>I am happy!</p>}
-        {finished && <p>I am finished!</p>}
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-		<Footer />
-        <script>
-            import "../scripts/menu.js";
-          </script>
+        <BaseLayout pageTitle={pageTitle}>
+            <p>Few things about me:</p>
+            <ul>
+                <li>My name is {identity.firstName}</li>
+                <li>
+                    I live in {identity.country} and I work as a {identity.occupation}.
+                </li>
+                <li>
+                    My hobbies include {identity.hobbies[0]}, {identity.hobbies[1]}, {identity.hobbies[2]}, and {identity.hobbies[3]}
+                </li>
+            </ul>
+            <p>My skills are:</p>
+            <ul>
+                {skills.map((skill) => <li class="skill" >{skill}</li>)}
+            </ul>
+            {happy && <p>I am happy!</p>}
+            {finished && <p>I am finished!</p>}
+            {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+        </BaseLayout>
 	</body>
 </html>

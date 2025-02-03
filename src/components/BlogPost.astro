@@ -1,0 +1,10 @@
+---
+const {title, url, image} = Astro.props
+---
+
+<li>
+    <a href={url}>
+        <img src={image.url} width="200" alt={image.alt} />
+        <h2 class="skill">{title}</h2>
+    </a>
+</li>

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Blog post testing 3"
 pubDate: 2024-02-03
 description: "Testing astro blog"
@@ -10,7 +11,3 @@ tags: ["astro", "blogging"]
 ---
 
 # Testing blog 3
-
-Published on: 2024-02-03
-
-Welcome to _blog_ testing
